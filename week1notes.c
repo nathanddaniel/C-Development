@@ -29,14 +29,11 @@ struct tax_info Nathan;
 struct tax_info Jimmy;
 
 // declaring a struct data type for NBA teams
-struct NBA {
+typedef struct BasketballTeams {
    char city_name[24];
    char team_name[24];
-   int year_founded;
-};
-
-// declaring multiple struct variables in one line
-struct NBA Dallas, Toronto, Charlotte, Memphis;
+   bool wonChampion;
+} NBATeams;
 
 // declaring multiple struct variables at the same time we define the struct
 struct NFL {
@@ -47,8 +44,21 @@ struct NFL {
 
 int main() {
    
-   // strcpy(str3, str1);
-   // strcat(str1, str2);
+   NBATeams Toronto;
+   strcpy(Toronto.city_name, "Toronto, Ontario");
+   strcpy(Toronto.team_name, "Raptors");
+   Toronto.wonChampion = true;
+
+   NBATeams Memphis;
+   strcpy(Memphis.city_name, "Memphis, Tennessee");
+   strcpy(Memphis.team_name, "Grizzlies");
+   Memphis.wonChampion = false;
+
+   NBATeams NewOrleans;
+   strcpy(NewOrleans.city_name, "New Orleans, Louisiana");
+   strcpy(NewOrleans.team_name, "Pelicans");
+   NewOrleans.wonChampion = true;
+
 
    GB.year_founded = 1919;
    strcpy(GB.city_name, "Green Bay, Wisconsin");
@@ -63,6 +73,12 @@ int main() {
    strcpy(NE.team_name, "Patriots");
 
    printf("\n");
+
+   printf("The first Canadian team to ever win the NBA championship were the %s, achieving it in 2019. The Raptors play in %s.\n", Toronto.team_name, Toronto.city_name);
+   
+   printf("The Vancouver Grizzlies relocated to become the Memphis %s. The Grizzlies play in %s, and have always been a fun team to watch.\n", Memphis.team_name, Memphis.city_name);
+
+   printf("The latest team to join the NBA are the New Orleans %s, which as the name implies, are from %s.\n", NewOrleans.team_name, NewOrleans.city_name);
 
    printf("The most historic team in the NFL are located in %s. The %s were founded in %d. \n", GB.city_name, GB.team_name, GB.year_founded);
 
