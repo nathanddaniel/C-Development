@@ -29,23 +29,49 @@ struct tax_info Nathan;
 struct tax_info Jimmy;
 
 // declaring a struct data type for NBA teams
-struct NBA_Teams {
+struct NBA {
    char city_name[24];
    char team_name[24];
-   int year_founded[5]
+   int year_founded;
 };
 
 // declaring multiple struct variables in one line
-struct NBA_Teams Dallas, Toronto, Charlotte, Memphis;
+struct NBA Dallas, Toronto, Charlotte, Memphis;
+
+// declaring multiple struct variables at the same time we define the struct
+struct NFL {
+   char city_name[24];
+   char team_name[24];
+   int year_founded;
+} GB, KC, NE;
 
 int main() {
    
-   strcpy(str3, str1);
-   strcat(str1, str2);
+   // strcpy(str3, str1);
+   // strcat(str1, str2);
 
-   printf("%s\n", str3); // Output: Hello
-   printf("%s\n", str1); // Output: HelloWorld
-   
+   GB.year_founded = 1919;
+   strcpy(GB.city_name, "Green Bay, Wisconsin");
+   strcpy(GB.team_name, "Packers");
+
+   KC.year_founded = 1963;
+   strcpy(KC.city_name, "Kansas City, Missouri");
+   strcpy(KC.team_name, "Chiefs");
+
+   NE.year_founded = 1971;
+   strcpy(NE.city_name, "Foxborough, Massachusetts");
+   strcpy(NE.team_name, "Patriots");
+
+   printf("\n");
+
+   printf("The most historic team in the NFL are located in %s. The %s were founded in %d. \n", GB.city_name, GB.team_name, GB.year_founded);
+
+   printf("The current dynasty in the NFL call %s home. The Kansas City %s were founded in %d.\n", KC.city_name, KC.team_name, KC.year_founded);
+
+   printf("The previous NFL dynasty were the New England %s. Based in %s, the team was founded in %d. \n", NE.team_name, NE.city_name, NE.year_founded);
+
+   printf("\n");
+
    return 0;
 }
 
